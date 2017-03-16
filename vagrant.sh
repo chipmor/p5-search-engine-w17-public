@@ -22,22 +22,20 @@ sudo apt-get install oracle-java7-installer --yes
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
 cd /vagrant
-
-# Get staff starter code, and make it executable
-wget http://www-personal.umich.edu/~eschbri/p5_starter.tar.gz
-tar xzvf p5_starter.tar.gz
-rm p5_starter.tar.gz	 
-chmod +x run.sh
-
 # Get the hadoop tar, and move it into the /vagrant directory
 wget http://mirror.nexcess.net/apache/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz
 tar xvxf hadoop-2.7.2.tar.gz
 rm hadoop-2.7.2.tar.gz
-mv hadoop-2.7.2/* hadoop/
-rm -r hadoop-2.7.2/
+mv hadoop-2.7.2 hadoop
 cd ./hadoop
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 cd ..
+
+# Get staff starter code, and make it executable
+wget http://www-personal.umich.edu/~eschbri/p5-large-files.tar.gz
+tar xzvf p5-large-files.tar.gz
+rm p5-large-files.tar.gz	 
+chmod +x run.sh
 
 # Install Python pip with --yes as the default argument
 sudo apt-get install python-pip --yes
