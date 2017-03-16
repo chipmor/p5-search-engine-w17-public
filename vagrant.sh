@@ -11,7 +11,6 @@ sudo apt-get install vim emacs --yes
 sudo apt-get install python-software-properties software-properties-common --yes
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get install python3 --yes
 
 # These two lines are stolen from: http://askubuntu.com/questions/190582/installing-java-automatically-with-silent-option
 # This is to get rid of the license prompt that oracle always gives you
@@ -26,7 +25,8 @@ cd /vagrant
 wget http://mirror.nexcess.net/apache/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz
 tar xvxf hadoop-2.7.2.tar.gz
 rm hadoop-2.7.2.tar.gz
-mv hadoop-2.7.2 hadoop
+mv hadoop-2.7.2/* hadoop/
+rm -r hadoop-2.7.2/
 cd ./hadoop
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 cd ..
@@ -37,11 +37,9 @@ tar xzvf p5-large-files.tar.gz
 rm p5-large-files.tar.gz	 
 chmod +x run.sh
 
-# Install Python pip with --yes as the default argument
-sudo apt-get install python-pip --yes
-
-# Install virtualenv used for 485 projects
-sudo pip install virtualenv
+# Install python3, pip (python's package manager), and virutal environment for python
+sudo apt install python3 python3-pip --yes
+pip3 install virtualenv
 
 # By default, while installing MySQL, there will be a blocking prompt asking you to enter the password
 # Next two lines set the default password of root so there is no prompt during installation
