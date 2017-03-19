@@ -32,9 +32,9 @@ export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 cd ..
 
 # Get staff starter code, and make it executable
-wget http://www-personal.umich.edu/~eschbri/p5-large-files.tar.gz
-tar xzvf p5-large-files.tar.gz
-rm p5-large-files.tar.gz	 
+wget http://www-personal.umich.edu/~eschbri/p5-large-files.tar
+tar -xvf p5-large-files.tar
+rm p5-large-files.tar
 chmod +x run.sh
 
 # Install python3, pip (python's package manager), and virutal environment for python
