@@ -29,13 +29,13 @@ mv hadoop-2.7.2/* hadoop/
 rm -r hadoop-2.7.2/
 cd ./hadoop
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+chmod +x run.sh
 cd ..
 
 # Get staff starter code, and make it executable
 wget http://www-personal.umich.edu/~eschbri/p5-large-files.tar
 tar -xvf p5-large-files.tar
 rm p5-large-files.tar
-chmod +x run.sh
 
 # Install python3, pip (python's package manager), and virutal environment for python
 sudo apt install python3 python3-pip --yes
